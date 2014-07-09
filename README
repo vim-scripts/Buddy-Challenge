@@ -1,0 +1,8 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4982
+
+There are two versions of this script because MAC vs. Windows is slightly different the keyboard mappings.  On Windows, when you press Alt-i the vim editor teases you about what's under the cursor.  Some clever combinations can occur
+
+Demo :-
+
+https://www.youtube.com/watch?v=v7F3c9Ez0xg&feature=youtu.be
+
