@@ -27,13 +27,6 @@ function RandomUnique(prev, max)
 	return result
 endfunction
 
-" make it extra personal, choose your own
-if exists("buddyChallenge_yourname")
-	let insertYourNameHere = buddyChallenge_yourname
-else
-	let insertYourNameHere = "pls add: let buddyChallenge_yourname = '{your name}' to your _vimrc"
-endif
-
 " witty one word close
 let wittyOneWordCloseMax      = 11
 let thisWittyOneWordClose     = Random(wittyOneWordCloseMax)
@@ -43,7 +36,7 @@ let praiseWorthyTermMax       = 14
 let thisPraiseworthyTerm      = Random(praiseWorthyTermMax)
 
 " better alternative term
-let coolAlternativeTermMax    = 23
+let coolAlternativeTermMax    = 17
 let thisCoolAlternativeTerm   = Random(coolAlternativeTermMax)
 
 " good person term
@@ -97,6 +90,15 @@ let thisCredibleSkill         = Random(credibleSkillMax)
 " insult
 let insultMax                 = 24
 let thisInsult                = Random(insultMax)
+
+function SetPersonalName()
+	" make it extra personal, choose your own
+	if exists("g:buddyChallenge_yourname")
+		let g:insertYourNameHere = g:buddyChallenge_yourname
+	else
+		let g:insertYourNameHere = "pls add: let buddyChallenge_yourname = '{your name}' to your _vimrc"
+	endif
+endfunction
 
 function NextWittyOneWordClose()
 	if g:thisWittyOneWordClose == 0
@@ -533,6 +535,7 @@ function NextIntelligentPutDown()
 endfunction
 
 function NextTermMeaningYou()
+	call SetPersonalName()
 	if g:thisTermMeaningYou == 0
 		let result = g:insertYourNameHere
 	endif
