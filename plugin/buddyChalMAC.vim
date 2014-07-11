@@ -91,6 +91,9 @@ let thisCredibleSkill         = Random(credibleSkillMax)
 let insultMax                 = 24
 let thisInsult                = Random(insultMax)
 
+" insult cap
+let insultCount               = 0
+
 function SetPersonalName()
 	" make it extra personal, choose your own
 	if exists("g:buddyChallenge_yourname")
@@ -366,6 +369,11 @@ function NextTermMeaningBetter()
 endfunction
 
 function NextInsultTerm()
+	let g:insultCount = g:insultCount + 1
+	if g:insultCount > 4
+		let g:thisInsultTerm = RandomUnique(g:thisInsultTerm, g:insultTermMax)
+		return "#!@***"
+	endif
 	if g:thisInsultTerm == 0
 		let result = "crap"
 	endif
@@ -965,6 +973,7 @@ function NextCredibleSkill()
 endfunction
 
 function NextInsult(theItem)
+	let g:insultCount = 0
 	if g:thisInsult == 0
 		echohl Cursor
 		echon a:theItem
@@ -1257,4 +1266,4 @@ function CentreOnWord()
 endfunction
 
 " map this
-map <A-i> :call CentreOnWord()<CR>
+map <D-i> :call CentreOnWord()<CR>
