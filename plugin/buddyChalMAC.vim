@@ -928,7 +928,7 @@ function NextCredibleSkill()
 		let result = "Audio Units"
 	endif
 	if g:thisCredibleSkill == 12
-		let result = "Core Animations"
+		let result = "Core Animation"
 	endif
 	if g:thisCredibleSkill == 13
 		let result = "Core Image"
@@ -1257,4 +1257,4 @@ function CentreOnWord()
 endfunction
 
 " map this
-map <A-i> :call CentreOnWord()<CR>
+map <D-i> :call CentreOnWord()<CR>
