@@ -1260,4 +1260,4 @@ function CentreOnWord()
 endfunction
 
 " map this
-map <D-i> :call CentreOnWord()<CR>
+map <A-i> :call CentreOnWord()<CR>
