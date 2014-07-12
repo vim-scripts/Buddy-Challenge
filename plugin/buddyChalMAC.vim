@@ -36,7 +36,7 @@ let praiseWorthyTermMax       = 14
 let thisPraiseworthyTerm      = Random(praiseWorthyTermMax)
 
 " better alternative term
-let coolAlternativeTermMax    = 17
+let coolAlternativeTermMax    = 15
 let thisCoolAlternativeTerm   = Random(coolAlternativeTermMax)
 
 " good person term
@@ -193,7 +193,7 @@ function NextCoolAlternative(theItem)
 		let result = a:theItem." 2"
 	endif
 	if g:thisCoolAlternativeTerm == 1
-		let result = a:theItem." \"Corba Objects\""
+		let result = a:theItem." 'Corba Objects'"
 	endif
 	if g:thisCoolAlternativeTerm == 2
 		let result = a:theItem." 3.0"
@@ -211,33 +211,27 @@ function NextCoolAlternative(theItem)
 		let result = a:theItem." 9.0"
 	endif
 	if g:thisCoolAlternativeTerm == 7
-		let result = a:theItem." \"Executive Pro\""
+		let result = a:theItem." 'Executive Pro Edition'"
 	endif
 	if g:thisCoolAlternativeTerm == 8
-		let result = a:theItem." \"Special Edition\""
+		let result = a:theItem." SE"
 	endif
 	if g:thisCoolAlternativeTerm == 9
-		let result = a:theItem." \"Enterprise Server\""
+		let result = a:theItem." 'Enterprise Server'"
 	endif
 	if g:thisCoolAlternativeTerm == 10
-		let result = a:theItem." \"Enterprise Edition\""
+		let result = a:theItem." 'Enterprise Objects'"
 	endif
 	if g:thisCoolAlternativeTerm == 11
-		let result = a:theItem." \"Blue Denim\""
+		let result = a:theItem." 'Red Sky Sierra'"
 	endif
 	if g:thisCoolAlternativeTerm == 12
-		let result = a:theItem." \"Red Sky Sierra\""
+		let result = a:theItem." 'Lilac Lashes'"
 	endif
 	if g:thisCoolAlternativeTerm == 13
-		let result = a:theItem." \"Teal Roof Tiles\""
+		let result = a:theItem." 'Redundant Array'"
 	endif
 	if g:thisCoolAlternativeTerm == 14
-		let result = a:theItem." \"Lilac Lashes\""
-	endif
-	if g:thisCoolAlternativeTerm == 15
-		let result = a:theItem." \"Redundant Array\""
-	endif
-	if g:thisCoolAlternativeTerm == 16
 		let result = a:theItem." with ".NextCredibleSkill()
 	endif
 	let g:thisCoolAlternativeTerm = RandomUnique(g:thisCoolAlternativeTerm, g:coolAlternativeTermMax)
@@ -993,7 +987,7 @@ function NextInsult(theItem)
 	endif
 	if g:thisInsult == 2
 		echohl Comment
-		echon "why is "
+		echon "so why is "
 		echohl Cursor
 		echon a:theItem
 		echohl Comment
@@ -1019,7 +1013,7 @@ function NextInsult(theItem)
 		echohl Question
 		echon NextTermMeaningYou()
 		echohl Comment
-		echon " what do you mean \""
+		echon " what do you mean by \""
 		echohl Cursor
 		echon a:theItem
 		echohl Comment
@@ -1215,7 +1209,7 @@ function NextInsult(theItem)
 		echohl Cursor
 		echon a:theItem
 		echohl Comment
-		echon " for ".((Random(3))+1)." years"
+		echon " for ".((Random(3))+2)." years"
 	endif
 	if g:thisInsult == 22
 		echohl Comment
@@ -1266,4 +1260,4 @@ function CentreOnWord()
 endfunction
 
 " map this
-map <A-i> :call CentreOnWord()<CR>
+map <D-i> :call CentreOnWord()<CR>
