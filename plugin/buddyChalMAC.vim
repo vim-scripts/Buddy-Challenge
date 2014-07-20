@@ -32,10 +32,10 @@ let wittyOneWordCloseMax      = 11
 let thisWittyOneWordClose     = Random(wittyOneWordCloseMax)
 
 " praise worthy term
-let praiseWorthyTermMax       = 14
+let praiseWorthyTermMax       = 15
 let thisPraiseworthyTerm      = Random(praiseWorthyTermMax)
 
-" better alternative term
+" cool alternative term
 let coolAlternativeTermMax    = 15
 let thisCoolAlternativeTerm   = Random(coolAlternativeTermMax)
 
@@ -80,11 +80,11 @@ let credibleNameMax           = 23
 let thisCredibleName          = Random(credibleNameMax)
 
 " company name
-let companyNameMax            = 18
+let companyNameMax            = 26
 let thisCompanyName           = Random(companyNameMax)
 
 " credible skill
-let credibleSkillMax          = 23
+let credibleSkillMax          = 35
 let thisCredibleSkill         = Random(credibleSkillMax)
 
 " insult
@@ -183,6 +183,9 @@ function NextPraiseWorthyTerm()
 	endif
 	if g:thisPraiseworthyTerm == 13
 		let result = "the bollox"
+	endif
+	if g:thisPraiseworthyTerm == 14
+		let result = "improves your skills as a professional"
 	endif
 	let g:thisPraiseworthyTerm = RandomUnique(g:thisPraiseworthyTerm, g:praiseWorthyTermMax)
 	return result
@@ -888,6 +891,30 @@ function NextCompanyName()
 	if g:thisCompanyName == 17
 		let result = "Sedlescombe IT"
 	endif
+	if g:thisCompanyName == 18
+		let result = "Gwyn IT"
+	endif
+	if g:thisCompanyName == 19
+		let result = "IT Basements"
+	endif
+	if g:thisCompanyName == 20
+		let result = "Blitz Games Studios"
+	endif
+	if g:thisCompanyName == 21
+		let result = "Radiant Worlds"
+	endif
+	if g:thisCompanyName == 22
+		let result = "Chesilton IT"
+	endif
+	if g:thisCompanyName == 23
+		let result = "Colwith IT"
+	endif
+	if g:thisCompanyName == 24
+		let result = "Silverton IT"
+	endif
+	if g:thisCompanyName == 25
+		let result = "Ongar IT"
+	endif
 	let g:thisCompanyName = RandomUnique(g:thisCompanyName, g:companyNameMax)
 	return result
 endfunction
@@ -961,6 +988,48 @@ function NextCredibleSkill()
 	endif
 	if g:thisCredibleSkill == 22
 		let result = "Swift Programming Language"
+	endif
+	if g:thisCredibleSkill == 22
+		let result = "C#"
+	endif
+	if g:thisCredibleSkill == 23
+		let result = "ASP.NET"
+	endif
+	if g:thisCredibleSkill == 24
+		let result = "AJAX"
+	endif
+	if g:thisCredibleSkill == 25
+		let result = "JavaScript"
+	endif
+	if g:thisCredibleSkill == 26
+		let result = "MVC"
+	endif
+	if g:thisCredibleSkill == 27
+		let result = "HTML"
+	endif
+	if g:thisCredibleSkill == 28
+		let result = ".NET Developer Algorithms"
+	endif
+	if g:thisCredibleSkill == 28
+		let result = "WCF"
+	endif
+	if g:thisCredibleSkill == 29
+		let result = "WPF"
+	endif
+	if g:thisCredibleSkill == 30
+		let result = "Agile"
+	endif
+	if g:thisCredibleSkill == 31
+		let result = "HTML 5"
+	endif
+	if g:thisCredibleSkill == 32
+		let result = "Ext JS"
+	endif
+	if g:thisCredibleSkill == 33
+		let result = "CSS3"
+	endif
+	if g:thisCredibleSkill == 34
+		let result = "jQuery"
 	endif
 	let g:thisCredibleSkill = RandomUnique(g:thisCredibleSkill, g:credibleSkillMax)
 	return result
@@ -1260,4 +1329,4 @@ function CentreOnWord()
 endfunction
 
 " map this
-map <A-i> :call CentreOnWord()<CR>
+map <D-i> :call CentreOnWord()<CR>
