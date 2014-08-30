@@ -9,6 +9,8 @@
 " | set the buddyChallenge_yourname var e.g                                     |
 " | let buddyChallenge_yourname = "Paul"                                        |
 " +-----------------------------------------------------------------------------+
+" | SAT  30TH AUG 2014:  2.1                                                    |
+" |                      General tidy up and tweak                              |
 " | FRI  29TH AUG 2014:  2.0                                                    |
 " |                      Added some credible sounding names                     |
 " | WED  23ND JUL 2014:  1.9                                                    |
@@ -57,12 +59,16 @@ let coolAlternativeTermMax    = 15
 let thisCoolAlternativeTerm   = Random(coolAlternativeTermMax)
 
 " good person term
-let goodPersonTermMax         = 27
+let goodPersonTermMax         = 26
 let thisGoodPersonTerm        = Random(goodPersonTermMax)
 
 " term meaning better
 let termMeaningBetterMax      = 11
 let thisTermMeaningBetter     = Random(termMeaningBetterMax)
+
+" term meaning bad
+let termMeaningBadMax         = 14
+let thisTermMeaningBad        = Random(termMeaningBadMax)
 
 " insult term
 let insultTermMax             = 18
@@ -81,7 +87,7 @@ let intelligentPutDownMax     = 29
 let thisIntelligentPutDown    = Random(intelligentPutDownMax)
 
 " term meaning you
-let termMeaningYouMax	      = 29
+let termMeaningYouMax	      = 28
 let thisTermMeaningYou	      = Random(termMeaningYouMax)
 
 " big town
@@ -178,10 +184,10 @@ function NextPraiseWorthyTerm()
 		let result = "cool"
 	endif
 	if g:thisPraiseworthyTerm == 6
-		let result = "respectable thing"
+		let result = "respectable"
 	endif
 	if g:thisPraiseworthyTerm == 7
-		let result = "the thing"
+		let result = "it"
 	endif
 	if g:thisPraiseworthyTerm == 8
 		let result = "something"
@@ -231,7 +237,7 @@ function NextCoolAlternative(theItem)
 		let result = a:theItem." 9.0"
 	endif
 	if g:thisCoolAlternativeTerm == 7
-		let result = a:theItem." 'Executive Pro Edition'"
+		let result = a:theItem." 'Executive Professional'"
 	endif
 	if g:thisCoolAlternativeTerm == 8
 		let result = a:theItem." SE"
@@ -240,13 +246,13 @@ function NextCoolAlternative(theItem)
 		let result = a:theItem." 'Enterprise Server'"
 	endif
 	if g:thisCoolAlternativeTerm == 10
-		let result = a:theItem." 'Enterprise Objects'"
+		let result = a:theItem." 'Enterprise'"
 	endif
 	if g:thisCoolAlternativeTerm == 11
 		let result = a:theItem." 'Red Sky Sierra'"
 	endif
 	if g:thisCoolAlternativeTerm == 12
-		let result = a:theItem." 'Lilac Lashes'"
+		let result = a:theItem." 'Zinc Pro'"
 	endif
 	if g:thisCoolAlternativeTerm == 13
 		let result = a:theItem." 'Redundant Array'"
@@ -308,36 +314,33 @@ function NextGoodPersonTerm()
 		let result = "the man"
 	endif
 	if g:thisGoodPersonTerm == 16
-		let result = "a very ".NextPraiseWorthyTerm()." man"
-	endif
-	if g:thisGoodPersonTerm == 17
 		let result = "a ".NextPraiseWorthyTerm()." man"
 	endif
-	if g:thisGoodPersonTerm == 18
+	if g:thisGoodPersonTerm == 17
 		let result = "damned ".NextPraiseWorthyTerm()
 	endif
-	if g:thisGoodPersonTerm == 19
+	if g:thisGoodPersonTerm == 18
 		let result = "rock hard"
 	endif
-	if g:thisGoodPersonTerm == 20
+	if g:thisGoodPersonTerm == 19
 		let result = "the best"
 	endif
-	if g:thisGoodPersonTerm == 21
+	if g:thisGoodPersonTerm == 20
 		let result = "among the top 10 in the coutry"
 	endif
-	if g:thisGoodPersonTerm == 22
+	if g:thisGoodPersonTerm == 21
 		let result = "one of the best in the country"
 	endif
-	if g:thisGoodPersonTerm == 23
+	if g:thisGoodPersonTerm == 22
 		let result = "definitely one of the best"
 	endif
-	if g:thisGoodPersonTerm == 24
+	if g:thisGoodPersonTerm == 23
 		let result = "considered one of the greatest"
 	endif
-	if g:thisGoodPersonTerm == 25
+	if g:thisGoodPersonTerm == 24
 		let result = "the if not definitely at least one of the best"
 	endif
-	if g:thisGoodPersonTerm == 26
+	if g:thisGoodPersonTerm == 25
 		let result = "considered the best"
 	endif
 	let g:thisGoodPersonTerm = RandomUnique(g:thisGoodPersonTerm, g:goodPersonTermMax)
@@ -379,6 +382,53 @@ function NextTermMeaningBetter()
 		let result = "far superior"
 	endif
 	let g:thisTermMeaningBetter = RandomUnique(g:thisTermMeaningBetter, g:termMeaningBetterMax)
+	return result
+endfunction
+
+function NextTermMeaningBad()
+	if g:thisTermMeaningBad == 0
+		let result = "bad"
+	endif
+	if g:thisTermMeaningBad == 1
+		let result = "serious"
+	endif
+	if g:thisTermMeaningBad == 2
+		let result = "very bad"
+	endif
+	if g:thisTermMeaningBad == 3
+		let result = "injurious"
+	endif
+	if g:thisTermMeaningBad == 4
+		let result = "dangerous"
+	endif
+	if g:thisTermMeaningBad == 5
+		let result = "catastrophic"
+	endif
+	if g:thisTermMeaningBad == 6
+		let result = "disaster"
+	endif
+	if g:thisTermMeaningBad == 7
+		let result = "disastrous"
+	endif
+	if g:thisTermMeaningBad == 8
+		let result = "doom"
+	endif
+	if g:thisTermMeaningBad == 9
+		let result = "paralysing"
+	endif
+	if g:thisTermMeaningBad == 10
+		let result = "grief"
+	endif
+	if g:thisTermMeaningBad == 11
+		let result = "disastrously bad"
+	endif
+	if g:thisTermMeaningBad == 12
+		let result = "crippling"
+	endif
+	if g:thisTermMeaningBad == 13
+		let result = "rupturing"
+	endif
+	let g:thisTermMeaningBad = RandomUnique(g:thisTermMeaningBad, g:termMeaningBadMax)
 	return result
 endfunction
 
@@ -631,18 +681,15 @@ function NextTermMeaningYou()
 		let result = "fellar"
 	endif
 	if g:thisTermMeaningYou == 24
-		let result = "boy"
-	endif
-	if g:thisTermMeaningYou == 25
 		let result = "son"
 	endif
-	if g:thisTermMeaningYou == 26
+	if g:thisTermMeaningYou == 25
 		let result = "brother"
 	endif
-	if g:thisTermMeaningYou == 27
+	if g:thisTermMeaningYou == 26
 		let result = "matey boy"
 	endif
-	if g:thisTermMeaningYou == 28
+	if g:thisTermMeaningYou == 27
 		let result = "chum"
 	endif
 	let g:thisTermMeaningYou = RandomUnique(g:thisTermMeaningYou, g:termMeaningYouMax)
@@ -1204,26 +1251,35 @@ function NextInsult(theItem)
 	if g:thisInsult == 9
 		echohl Question
 		echon NextTermMeaningYou()
+		echon " "
 		echohl Comment
-		echon " I am "
+		echon "I am"
+		echon " "
 		echohl Identifier
 		echon NextGoodPersonTerm()
+		echon " "
 		echohl Comment
-		echon " at "
+		echon "at"
+		echon " "
 		echohl Cursor
 		echon a:theItem
 	endif
 	if g:thisInsult == 10
 		echohl Comment
-		echon "I gotta tell you "
+		echon "I gotta tell you"
+		echon " "
 		echohl Question
 		echon NextTermMeaningYou()
+		echon " "
 		echohl Comment
-		echon " I am "
+		echon "I am"
+		echon " "
 		echohl Identifier
 		echon NextTermMeaningBetter()
 		echohl Comment
-		echon " with "
+		echon " "
+		echon "at"
+		echon " "
 		echohl Cursor
 		echon a:theItem
 	endif
@@ -1242,30 +1298,37 @@ function NextInsult(theItem)
 	if g:thisInsult == 12
 		echohl Question
 		echon NextTermMeaningYou()
+		echon " "
 		echohl Comment
-		echon " I was voted best overall "
+		echon "last year I was voted best overall"
+		echon " "
 		echohl Cursor
 		echon a:theItem
+		echon " "
 		echohl Comment
-		echon " by "
+		echon "by"
+		echon " "
 		echohl Identifier
 		echon NextCredibleName()
-		echohl Comment
-		echon " last year"
 	endif
 	if g:thisInsult == 13
 		echohl Question
 		echon NextTermMeaningYou()
+		echon " "
 		echohl Comment
-		echon " I came top ".(1+(Random(14)))."% "
+		echon "last year I came top"
+		echon " "
+		echon 1+(Random(14))
+		echon "%"
+		echon " "
 		echohl Cursor
 		echon a:theItem
 		echohl Comment
 		echon " "
+		echon "in"
+		echon " "
 		echohl Identifier
 		echon NextCredibleName()
-		echohl Comment
-		echon " rewiew last year"
 	endif
 	if g:thisInsult == 14
 		echohl Cursor
@@ -1304,24 +1367,32 @@ function NextInsult(theItem)
 	endif
 	if g:thisInsult == 18
 		echohl Comment
-		echon "I'd think about telling people you're "
+		echon "I'd think about telling people this"
+		echon " "
 		echohl Cursor
 		echon a:theItem
-		echohl Comment
-		echon " "
 		echohl Question
+		echon " "
 		echon NextTermMeaningYou()
 	endif
 	if g:thisInsult == 19
 		echohl Question
 		echon NextTermMeaningYou()
+		echon " "
 		echohl Comment
-		echon " if you tell people you're "
+		echon "if you tell people you're"
+		echon " "
 		echohl Cursor
 		echon a:theItem
 		echohl Comment
-		echon " it could be trouble for you"
-
+		echon " "
+		echon "it could be"
+		echon " "
+		echohl Identifier
+		echon NextTermMeaningBad()
+		echon " "
+		echohl Comment
+		echon "for you"
 	endif
 	if g:thisInsult == 20
 		echohl Comment
@@ -1335,15 +1406,23 @@ function NextInsult(theItem)
 	endif
 	if g:thisInsult == 21
 		echohl Comment
-		echon "when I was at "
+		echon "I was at"
+		echon " "
 		echohl Identifier
 		echon NextCredibleAcademic(a:theItem)
+		echon " "
 		echohl Comment
-		echon " I studied "
+		echon "studying"
+		echon " "
 		echohl Cursor
 		echon a:theItem
+		echon " "
 		echohl Comment
-		echon " for ".((Random(3))+2)." years"
+		echon "for"
+		echon " "
+		echon Random(3)+2
+		echon " "
+		echon "years"
 	endif
 	if g:thisInsult == 22
 		echohl Comment
@@ -1362,8 +1441,13 @@ function NextInsult(theItem)
 	if g:thisInsult == 23
 		echohl Cursor
 		echon a:theItem
+		echohl Question
+		echon " "
+		echon NextWittyOneWordClose()
+		echon " "
 		echohl Comment
-		echon " ".NextWittyOneWordClose()." what happened "
+		echon "what happened"
+		echon " "
 		echohl Question
 		echon NextTermMeaningYou()
 		echohl Comment
