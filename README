@@ -6,3 +6,13 @@ Demo :-
 
 https://www.youtube.com/watch?v=v7F3c9Ez0xg&feature=youtu.be
 
+Tip:: 
+in Windows you can make AutoHotKey (*) press Alt-i for you when you press Middle Mouse: 
+
+  MButton::
+  Click
+  Sleep,200
+  Send,!i
+  return
+
+* www.autohotkey.com.  AutoHotKey is very easy to use and excels at trapping keys, mouse clicks, even joysticks.  It's easy, once setup just paste these lines into an .ahk script e.g "mybutton.ahk" and Right-click context menu in explorer --> Run Script.
