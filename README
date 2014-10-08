@@ -1,6 +1,6 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=4982
 
-There are two versions of this script because MAC vs. Windows is slightly different the keyboard mappings.  On Windows, when you press Alt-i the vim editor teases you about what's under the cursor.  Some clever combinations can occur
+There are two versions of this script because MAC vs. Windows is slightly different the keyboard mappings.  On Windows, when you press Alt-z or Alt-i  the vim editor plays brain games with you about what's under the cursor.  On MAC it's Cmd-z or Cmd-i
 
 Demo :-
 
@@ -15,4 +15,4 @@ in Windows you can make AutoHotKey (*) press Alt-i for you when you press Middle
   Send,!i
   return
 
-* www.autohotkey.com.  AutoHotKey is very easy to use and excels at trapping keys, mouse clicks, even joysticks.  It's easy, once setup just paste these lines into an .ahk script e.g "mybutton.ahk" and Right-click context menu in explorer --> Run Script.
+just paste these lines into an .ahk script e.g "mybutton.ahk" and Right-click context menu in explorer --> Run Script when you've installed AutoHotKey. Get it from www.autohotkey.com.  AutoHotKey is a very easy to use macro style programming language.  It is superb at trapping keys, mice, and joysticks. 
