@@ -15,4 +15,4 @@ in Windows you can make AutoHotKey (*) press Alt-i for you when you press Middle
   Send,!i
   return
 
-just paste these lines into an .ahk script e.g "mybutton.ahk" and Right-click context menu in explorer --> Run Script when you've installed AutoHotKey. Get it from www.autohotkey.com.  AutoHotKey is a very easy to use macro style programming language.  It is superb at trapping keys, mice, and joysticks. 
+just paste these lines into an .ahk script e.g "mybutton.ahk" and Right-click context menu in explorer --> Run Script when you've installed AutoHotKey. Get it from www.autohotkey.com.  AutoHotKey is a very easy to use macro style programming language.  It is superb at trapping keys, mice, and joysticks. And no I don't work for AutoHotKey
